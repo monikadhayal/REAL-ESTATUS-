@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 bg-white">
+    <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 bg-white mt-10">
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src="/AboutPage.jpg"
