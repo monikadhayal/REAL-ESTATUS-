@@ -13,14 +13,14 @@ export default function Testimonials() {
       </div>
 
       <div className="flex justify-center m-10  ">
-        <div className="bg-white w-80 h-auto rounded-md shadow-2xl m-5 flex flex-col items-center border border-gray-100 p-4 text-center">
+        <div className="bg-white w-80 h-auto rounded-md shadow-2xl m-5 flex flex-col items-center border border-gray-100 p-4 text-center overflow-hidden hover:scale-105 transition-transform duration-300">
           <img
             src="/human1.jpg"
             alt="Pic 1"
             className="rounded-full w-24 h-24 mb-4 object-cover"
           />
 
-          <h2 className="text-lg font-semibold">Monika Akshay Chahar</h2>
+          <h2 className="text-lg font-semibold">Jon jecksion</h2>
           <p className="text-sm text-gray-500 mb-2">Web Developer</p>
 
           <div className="text-orange-400 text-lg mb-3">⭐⭐⭐⭐⭐</div>
@@ -32,13 +32,13 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="bg-white w-80 h-auto  rounded-md shadow-2xl flex flex-col m-5  items-center border border-gray-100 p-4 text-center">
+        <div className="bg-white w-80 h-auto  rounded-md shadow-2xl flex flex-col m-5  items-center border border-gray-100 p-4 text-center overflow-hidden hover:scale-105 transition-transform duration-300">
           <img
             src="/human2.jpg"
             alt="Pic2"
             className=" rounded-full w-24 h-24 mb-4 object-cover"
           />
-          <h2 className="text-lg font-semibold">Monika Akshay Chahar</h2>
+          <h2 className="text-lg font-semibold">jhd ifhfuweef </h2>
           <p className="text-sm text-gray-500 mb-2">Web Developer</p>
 
           <div className="text-orange-400 text-lg mb-3">⭐⭐⭐⭐⭐</div>
@@ -49,14 +49,14 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="bg-white w-80 h-auto rounded-md shadow-2xl m-5 flex flex-col items-center border border-gray-100 p-4 text-center">
+        <div className="bg-white w-80 h-auto rounded-md shadow-2xl m-5 flex flex-col items-center border border-gray-100 p-4 text-center overflow-hidden hover:scale-105 transition-transform duration-300">
           <img
             src="/human3.jpg"
             alt="Pic3"
             className="rounded-full w-24 h-24 mb-4 object-cover"
           />
 
-          <h2 className="text-lg font-semibold">Monika Akshay Chahar</h2>
+          <h2 className="text-lg font-semibold">djh kjddhfuie </h2>
           <p className="text-sm text-gray-500 mb-2">Web Developer</p>
 
           <div className="text-orange-400 text-lg mb-3">⭐⭐⭐⭐⭐</div>
@@ -109,7 +109,6 @@ export default function Testimonials() {
           </button>
         </form>
       </section>
-
     </div>
   );
 }
