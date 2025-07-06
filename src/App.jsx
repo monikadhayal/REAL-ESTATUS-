@@ -5,6 +5,8 @@ import AboutPage from "./Pages/AboutPage";
 import ProjectsPage from "./Pages/ProjectsPage";
 import Testimonials from "./Pages/Testimonials";
 import Footer from "./component/footer";
+import SellProperty from "./Pages/SellProperty";
+import MyProperties from "./Pages/MyProperties";
 // import ProjectModal from "./DetailPage/ProjectModal";
 
 export default function App() {
@@ -17,6 +19,8 @@ export default function App() {
         <Route path="/ProjectsPage" element={<ProjectsPage />} />
         <Route path="/Testimonials" element={<Testimonials />} />
         {/* <Route path="/DetailPage/ProjectModal" element={<Img1DetailPage />} /> */}
+        <Route path="/sellProperty" element={<SellProperty />} />
+        <Route path="/myproperties" element={<MyProperties />} />
       </Routes>
       <Footer />
     </div>

@@ -33,6 +33,18 @@ export default function Navbar() {
           >
             Testimonials
           </Link>
+          <Link
+            to="/SellProperty"
+            className="text-gray-400 hover:text-black transition-all duration-300"
+          >
+            SellProperty
+          </Link>
+          <Link
+            to="/MyProperties"
+            className="text-gray-400 hover:text-black transition-all duration-300"
+          >
+            MyProperties
+          </Link>
         </div>
 
         <button className="bg-blue-600 px-4 py-1 rounded-md hover:bg-gray-200 text-white">

@@ -386,7 +386,6 @@ export default function ProjectsPage() {
         Projects Completed
       </h1>
 
-      {/* Swiper Slider */}
       <Swiper
         spaceBetween={20}
         slidesPerView={1}
@@ -421,7 +420,6 @@ export default function ProjectsPage() {
         ))}
       </Swiper>
 
-      {/* Modal */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
