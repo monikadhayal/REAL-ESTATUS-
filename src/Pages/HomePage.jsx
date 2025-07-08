@@ -38,7 +38,7 @@ export default function HomePage() {
                 {" "}
                 Project{" "}
               </button>
-              <button className="bg-blue-500  ml-4 rounded-md pt-2 pb-1 pl-4 pr-4 mr-4">
+              <button className="bg-blue-700  ml-4 rounded-md pt-2 pb-1 pl-4 pr-4 mr-4">
                 {" "}
                 Contact Us{" "}
               </button>

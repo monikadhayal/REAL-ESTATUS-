@@ -1,0 +1,51 @@
+// SignInModal.jsx
+export default function SignInModal({ onClose, onLoginSuccess }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Yaha aap actual login validation bhi kar sakti ho
+    alert("Login successful!");
+
+    onLoginSuccess(); // 👈 yeh login hone par SignUp button ko hide karega
+    onClose(); // 👈 modal band karega
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white p-6 rounded-xl shadow-md w-96">
+        <h2 className="text-2xl font-bold mb-4 text-center">Sign In</h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full border p-2 rounded"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full border p-2 rounded"
+            required
+          />
+
+          <div className="flex justify-between items-center">
+            <button
+              type="submit"
+              className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="text-red-600 hover:underline"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
