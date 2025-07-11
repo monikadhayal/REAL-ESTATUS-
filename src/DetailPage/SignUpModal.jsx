@@ -1,4 +1,3 @@
-// SignUpModal.jsx
 export default function SignUpModal({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -12,14 +11,20 @@ export default function SignUpModal({ onClose }) {
             const email = e.target[1].value;
             const password = e.target[2].value;
 
-            const userData = { name, email, password };
+            const newUser = { name, email, password };
 
-            // ✅ Save to localStorage
-            localStorage.setItem("userData", JSON.stringify(userData));
+            // ✅ Load existing users or empty array
+            const existingUsers =
+              JSON.parse(localStorage.getItem("users")) || [];
+
+            // ✅ Add new user
+            existingUsers.push(newUser);
+
+            // ✅ Save updated array
+            localStorage.setItem("users", JSON.stringify(existingUsers));
 
             alert("Sign up successful!");
             onClose();
-            
           }}
           className="space-y-4"
         >

@@ -19,17 +19,35 @@ export default function SellProperty() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const stored = JSON.parse(localStorage.getItem("properties")) || [];
-    stored.push(formData);
-    localStorage.setItem("properties", JSON.stringify(stored));
+
+    const title = e.target[0].value;
+    const location = e.target[1].value;
+    const price = e.target[2].value;
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (!currentUser) {
+      alert("Please log in first to add a property.");
+      return;
+    }
+
+    const newProperty = {
+      id: Date.now(), // unique ID
+      title,
+      location,
+      price,
+      imageUrl,
+      description,
+      userEmail: currentUser.email, // 🔐 important!
+    };
+
+    const existingProperties =
+      JSON.parse(localStorage.getItem("properties")) || [];
+    existingProperties.push(newProperty);
+    localStorage.setItem("properties", JSON.stringify(existingProperties));
+
     alert("Property added successfully!");
-    setFormData({
-      title: "",
-      location: "",
-      price: "",
-      image: "",
-      description: "",
-    });
+    e.target.reset();
   };
 
   return (

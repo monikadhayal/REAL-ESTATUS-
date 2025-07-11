@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 
 export default function MyProperties() {
-  const [properties, setProperties] = useState([]);
-
+  // const [properties, setProperties] = useState([]);
+  const [myProperties, setMyProperties] = useState([]);
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("properties")) || [];
-    setProperties(data);
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const allProperties = JSON.parse(localStorage.getItem("properties")) || [];
+
+    if (currentUser) {
+      const filtered = allProperties.filter(
+        (property) => property.userEmail === currentUser.email
+      );
+      setMyProperties(filtered);
+    }
   }, []);
 
   return (
@@ -14,32 +21,28 @@ export default function MyProperties() {
         My Submitted Properties
       </h2>
 
-      {properties.length === 0 ? (
-        <p className="text-center text-gray-600">
-          No properties submitted yet.
-        </p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {properties.map((prop, index) => (
-            <div
-              key={index}
-              className="bg-white p-4 shadow rounded-xl relative"
-            >
-              {prop.image && (
-                <img
-                  src={prop.image}
-                  alt={prop.title}
-                  className="w-full h-48 object-cover rounded mb-3"
-                />
-              )}
-              <h3 className="text-xl font-semibold">{prop.title}</h3>
-              <p className="text-gray-600">{prop.location}</p>
-              <p className="text-gray-800 font-bold">{prop.price}</p>
-              <p className="text-sm mt-2">{prop.description}</p>
-            </div>
-          ))}
+      {myProperties.map((property) => (
+        <div key={property.id} className="border p-4 rounded mb-4">
+          <h2 className="text-xl font-semibold">{property.title}</h2>
+          <p>Location: {property.location}</p>
+          <p>Price: ₹{property.price}</p>
+          <img
+            src={property.imageUrl}
+            alt="Property"
+            className="w-full h-60 object-cover rounded mb-2"
+          />
+          <p className="mb-1">Description: {property.description}</p>
+
+          {/* ✅ Edit & Delete buttons */}
+          <div className="mt-2 space-x-4">
+            <button className="bg-yellow-400 px-3 py-1 rounded">Edit</button>
+            <button className="bg-red-500 text-white px-3 py-1 rounded">
+              Delete
+            </button>
+          </div>
         </div>
-      )}
+      ))}
     </div>
   );
 }
+

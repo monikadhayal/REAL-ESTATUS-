@@ -1,13 +1,25 @@
-// SignInModal.jsx
 export default function SignInModal({ onClose, onLoginSuccess }) {
   const handleSubmit = (e) => {
     e.preventDefault();
+    const name = e.target[0].value;
+    const password = e.target[1].value;
 
-    // Yaha aap actual login validation bhi kar sakti ho
-    alert("Login successful!");
+    // ✅ Load users array from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    onLoginSuccess(); // 👈 yeh login hone par SignUp button ko hide karega
-    onClose(); // 👈 modal band karega
+    // ✅ Check if user exists
+    const userFound = existingUsers.find(
+      (user) => user.name === name && user.password === password
+    );
+
+    if (userFound) {
+      alert("Login successful!");
+      localStorage.setItem("currentUser", JSON.stringify(userFound));
+      onLoginSuccess(); // callback
+      onClose(); // close modal
+    } else {
+      alert("User not found. Please sign up first.");
+    }
   };
 
   return (
