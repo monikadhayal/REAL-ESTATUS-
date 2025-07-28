@@ -69,7 +69,7 @@ export default function Navbar() {
           {currentUser ? (
             <div className="flex items-center gap-4">
               <span className="text-gray-700 font-medium">
-                Welcome, {currentUser.name} 👋
+                Welcome, {currentUser.name} ({currentUser.role}) 👋
               </span>
               <button
                 onClick={handleLogout}

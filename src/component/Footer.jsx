@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0b1120] text-white w-full">
       <div className="max-w-screen-xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Column 1 */}
+     
         <div>
           <h1 className="text-xl font-bold">🏠 Estate</h1>
           <p className="text-sm mt-2">
@@ -21,9 +21,8 @@ export default function Footer() {
             industry. Lorem Ipsum has been the industry's standard dummy text.
           </p>
         </div>
-
-        {/* Column 2 */}
         <div>
+          
           <h2 className="font-bold mb-2">Company</h2>
           <ul className="space-y-1 text-sm">
             <li>Home</li>
@@ -33,7 +32,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3 */}
         <div>
           <h2 className="font-bold mb-2">Subscribe to our newsletter</h2>
           <p className="text-sm mb-2">

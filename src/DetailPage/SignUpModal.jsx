@@ -10,17 +10,15 @@ export default function SignUpModal({ onClose }) {
             const name = e.target[0].value;
             const email = e.target[1].value;
             const password = e.target[2].value;
+            const role = e.target[3].value;
 
-            const newUser = { name, email, password };
+            const newUser = { name, email, password, role };
 
-            // ✅ Load existing users or empty array
             const existingUsers =
               JSON.parse(localStorage.getItem("users")) || [];
 
-            // ✅ Add new user
             existingUsers.push(newUser);
 
-            // ✅ Save updated array
             localStorage.setItem("users", JSON.stringify(existingUsers));
 
             alert("Sign up successful!");
@@ -46,6 +44,12 @@ export default function SignUpModal({ onClose }) {
             className="w-full border p-2 rounded"
             required
           />
+
+          <select className="w-full border p-2 rounded" required>
+            <option value=""> Select Role </option>
+            <option value="seller"> Seller</option>
+            <option value="buyer"> Buyer</option>
+          </select>
 
           <div className="flex justify-between items-center">
             <button

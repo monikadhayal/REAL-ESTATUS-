@@ -23,6 +23,8 @@ export default function SellProperty() {
     const title = e.target[0].value;
     const location = e.target[1].value;
     const price = e.target[2].value;
+    const image = e.target[3].value; 
+    const description = e.target[4].value;
 
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -32,13 +34,13 @@ export default function SellProperty() {
     }
 
     const newProperty = {
-      id: Date.now(), // unique ID
+      id: Date.now(), 
       title,
       location,
       price,
-      imageUrl,
+      image,
       description,
-      userEmail: currentUser.email, // 🔐 important!
+      userEmail: currentUser.email, 
     };
 
     const existingProperties =
@@ -46,7 +48,7 @@ export default function SellProperty() {
     existingProperties.push(newProperty);
     localStorage.setItem("properties", JSON.stringify(existingProperties));
 
-    alert("Property added successfully!");
+    // alert("Property added successfully!");
     e.target.reset();
   };
 

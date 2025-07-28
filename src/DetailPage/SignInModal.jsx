@@ -1,22 +1,21 @@
 export default function SignInModal({ onClose, onLoginSuccess }) {
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target[0].value;
+    const email = e.target[0].value;
     const password = e.target[1].value;
-
-    // ✅ Load users array from localStorage
+  
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    // ✅ Check if user exists
     const userFound = existingUsers.find(
-      (user) => user.name === name && user.password === password
+      (user) => user.email === email && user.password === password
     );
 
     if (userFound) {
-      alert("Login successful!");
       localStorage.setItem("currentUser", JSON.stringify(userFound));
-      onLoginSuccess(); // callback
-      onClose(); // close modal
+      alert("Login successful!");
+      onLoginSuccess(); 
+      onClose();
     } else {
       alert("User not found. Please sign up first.");
     }
@@ -29,8 +28,8 @@ export default function SignInModal({ onClose, onLoginSuccess }) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            type="text"
-            placeholder="Name"
+            type="email"
+            placeholder="Email"
             className="w-full border p-2 rounded"
             required
           />
