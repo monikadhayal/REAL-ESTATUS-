@@ -13,7 +13,7 @@ export default function SignInModal({ onClose, onLoginSuccess }) {
 
     if (userFound) {
       localStorage.setItem("currentUser", JSON.stringify(userFound));
-      alert("Login successful!");
+      // alert("Login successful!");
       onLoginSuccess(); 
       onClose();
     } else {

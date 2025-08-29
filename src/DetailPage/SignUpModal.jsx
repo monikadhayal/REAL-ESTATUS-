@@ -21,7 +21,7 @@ export default function SignUpModal({ onClose }) {
 
             localStorage.setItem("users", JSON.stringify(existingUsers));
 
-            alert("Sign up successful!");
+            // alert("Sign up successful!");
             onClose();
           }}
           className="space-y-4"
